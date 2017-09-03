@@ -16,8 +16,8 @@ public class MechDrive {
 		FrontLeft = new Talon(FL);
 		BackRight = new Talon(BR);
 		BackLeft = new Talon(BL);
-		BackLeft.setInverted(true);
-		FrontLeft.setInverted(true);
+		BackLeft.setInverted(true); //Why do these need to be inverted?
+		FrontLeft.setInverted(true); //Why do these need to be inverted?
 		FRValue = FrontRight.getSpeed();
 		BRValue = BackRight.getSpeed();
 		BLValue = BackLeft.getSpeed();
