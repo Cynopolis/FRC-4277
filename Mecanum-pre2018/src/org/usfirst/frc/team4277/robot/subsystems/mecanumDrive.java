@@ -96,6 +96,8 @@ public class mecanumDrive extends Subsystem {
 		BackRight.set(bRight);
 	}
 	
+	final public double adjustor = Math.sqrt(2) + Math.abs(twist);
+	
 	public static void mechJoystickGyroDrive(Joystick stick, Double gyroAngle) {//hopefully we can get a navX gyro for precise data(IM)
 		double xVal = stick.getX();
 		double yVal = stick.getY();//experiment with running this through equations
@@ -106,7 +108,7 @@ public class mecanumDrive extends Subsystem {
 		if (Math.abs(yVal) < 0.05) yVal = 0;
 		if (Math.abs(twist) < 0.05) twist = 0;
 		
-		double adjustor = Math.sqrt(2) + Math.abs(twist);
+		
 		
 		double speed = Math.sqrt((Math.pow(xVal, 2)) + (Math.pow(yVal, 2)));
 		double angle = Math.asin(yVal/speed) + orientation;
